@@ -5,6 +5,7 @@
   "comments": false,
   "strings": false
 },
-"editor.suggestOnTriggerCharacters": true
+"editor.suggestOnTriggerCharacters": true,
+"liveServer.settings.port": 5501
 
 }
