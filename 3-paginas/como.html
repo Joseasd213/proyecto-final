@@ -8,69 +8,56 @@
 </head>
 <body>
   <main>
+<!-- Contenido del primer container -->
     <header class="flex items-center gap-80 justify-center h-36 shadow">
       <div class="flex">
         <div>
-          <img class="logo" src="Inicial/logo.png" alt="Citafacil">
+          <img class="logo" src="Inicial/logo.png" alt="">
         </div>
         <div class="logo-words">
-          <h1 class="text-[50px] m-0 font-semibold">CitaFácil</h1>
+          <h1 class="text-[50px] m-0 font-semibold">Cita<span style="color:#026344;">Fácil</span></h1>
           <p class="m-0">Tu cita, sin complicaciones</p>
         </div>
       </div>
       <div class="flex items-center gap-20">  
-        <div class="text-[20px]"><h2>Inicio</h2></div>
-        <div class="text-[20px]"><h2>Como funciona</h2></div>
-        <div class="text-[20px]"><h2>Contactos</h2></div>
-        <div class="text-[20px]"><h2>Iniciar sesión</h2></div>
+        <!-- Como funciona cada propiedad -->
+        <!-- border-b-2 = "b" bottom y "2" grosor de 2px -->
+        <!-- border-transparent = El border no existe, es invisible al inicio, se utiliza para que el hover no salte, sino aparezca suavemente -->
+        <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
+        <!-- transition = activa animación, sin ser bruto -->
+        <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
+        <div class="text-[20px] border-b-2 border-transparent border-lime-400 text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div>
+        <a href="3-paginas/como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
+        <a href="3-paginas/contactos.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
+        <a href="3-paginas/iniciar-sesion.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Iniciar sesión</h2></div></a>
       </div>
-      <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center justify-start text-white rounded-2xl mr-8">
+        <!-- Como funciona cada propiedad -->
+      <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
         <h2>Solicitar ayuda</h2>
-      </div>
+      </div> 
     </header>
-    <div class="w-auto max-w-2xl ml-20 mt-14 bg-[value]">
-      <div>
-        <h2 class="text-[40px] font-semibold">
-          Te ayudamos a conseguis tus citas administrativas de forma fácil, rápida y segura
-        </h2>
-        <p class="text-[25px] mt-5">
-          Acompañamos a personas con dificultades digitales, personas mayores e inmigrantes en la gestion de citas y tramites con la amonostracion publica
-        </p>
-        <div class="flex">
-        <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10">
-            <img src="contacto/person.png" alt="" class="w-10 h-10 object-contain shrink-0 mb-1">
-            <span class="mr-30px">Presencial</span>
-        </button>       
-          <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8">
-            <span>Online</span>
-          </button>
-        </div>
-          <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[550px] mt-5">
-            <input 
-            type="text" 
-            placeholder="Buscar..." 
-            class="w-full outline-none bg-transparent"
-            >
-          </div>
-      </div>
-    </div>
-    <div class="flex justify-center gap-44 mt-12 items-center bg-[#f0f3f1] h-36 px-2 w-fit mx-auto rounded-2xl">      
+
+<!-- Contenido del segundo container -->
+
+
+<!-- Contenido del tercer container -->
+    <div class="flex justify-center gap-32 mt-5 items-center bg-[#f0f3f1] h-36 px-2 w-fit mx-auto rounded-2xl">      
       <div class="flex">
         <div>
           <img class="logo" src="Inicial/assistance.png" alt="Citafacil">
         </div>
         <div class="mt-5">
-          <h1 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h1>
-          <p class="m-0">Tu cita, sin complicaciones</p>
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h2>
+          <p class="m-0 w-[200px]">Te guiamos paso a paso durante todo el proceso.</p>
         </div>
       </div> 
       <div class="flex">
         <div>
-          <img class="w-32" src="Inicial/love.png" alt="Citafacil">
+          <img class="w-36" src="Inicial/hands.png" alt="Citafacil">
         </div>
         <div class="mt-2">
-          <h1 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h1>
-          <p class="m-0">Tu cita, sin complicaciones</p>
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Seguro y legal</h2>
+          <p class="m-0 w-[200px]">Servicio transparente, legal y con total confidencialidad.</p>
         </div>
       </div>  
       <div class="flex">
@@ -78,8 +65,8 @@
           <img class="w-32" src="Inicial/shield.png" alt="Citafacil">
         </div>
         <div>
-          <h1 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h1>
-          <p class="m-0">Tu cita, sin complicaciones</p>
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Ahorra tiempo</h2>
+          <p class="m-0 w-[270px]">Nos encargamos de todo el proceso para que no pierdas tiempo.</p>
         </div>
       </div>
       <div class="flex mr-6">
@@ -87,30 +74,31 @@
           <img class="w-32" src="Inicial/clock.png" alt="Citafacil">
         </div>
         <div class="mt-5">
-          <h1 class="text-[25px] m-0 font-semibold">Aconpañamiento</h1>
-          <p class="m-0">Tu cita, sin complicaciones</p>
+          <h2 class="text-[25px] m-0 font-semibold">Aconpañamiento</h2>
+          <p class="m-0 w-[200px]">Atención cercana, paciente y adaptada a ti</p>
         </div>
       </div>
     </div>
-
-    <header class="flex bg-[#026344] h-36 shadow mt-10 b-0">
+<!-- Contenido del cuarto container -->
+    <header class="flex justify-center bg-[#026344] h-36 shadow mt-10 b-0">
       <div class="flex flex-col items-start gap-3 text-white justify-start ml-24 mt-8">
         <div class="text-[30px] font-semibold"><h2>Contacto</h2></div>
         <div class="flex gap-14">
-          <div class="flex items-center"><img class="w-[45px]" src="contacto/message.png" alt=""><p>info@citafacil.com</p></div>
-          <div class="flex items-center"><img class="w-[45px]" src="guia/telephone.png" alt=""><p>+1 (555) 123-4567</p></div>
-          <div class="flex items-center"><img class="w-[30px]" src="guia/location.png" alt=""><p>123 Main Street, City, State 12345</p></div>
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../contacto/message.svg" alt=""><p>info@citafacil.com</p></div>
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/phone-volume-solid-full.svg" alt=""><p>+1 (555) 123-4567</p></div>
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/location-dot-solid-full.svg" alt=""><p>123 Main Street, City, State 12345</p></div>
         </div>
       </div> 
-      <div class="ml-10 flex">
-          <div class="w-[400px] mt-12 ml-20 text-white text-[20px]">
+      <div class="flex bg-white h-32 ml-24 mt-2 border border-white"></div>
+      <div class="ml-20 flex">
+          <div class="w-[400px] mt-12  text-white text-[20px]">
             <p>Estamos para ayudarte, contactanos por el canal que prefieras</p>
           </div>
           <div class="flex ml-10 mt-12 gap-14">
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover" src="Inicial/facebook.png" alt=""></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover ml-1 mt-1"  src="guia/edited-photo (1).png" alt="Twitter"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="guia/message.png" alt="Instagram"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="Inicial/telephone.png" alt="LinkedIn"></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/facebook.png" alt=""></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="../guia/message.png" alt="Instagram"></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/telephone.png" alt="LinkedIn"></div>
           </div> 
       </div> 
     </header>

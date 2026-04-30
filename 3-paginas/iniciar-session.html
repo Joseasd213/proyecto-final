@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+<!-- Contenido del primer container -->
+    <header class="flex items-center gap-80 justify-center h-36 shadow">
+      <div class="flex">
+        <div>
+          <img class="logo" src="Inicial/logo.png" alt="">
+        </div>
+        <div class="logo-words">
+          <h1 class="text-[50px] m-0 font-semibold">Cita<span style="color:#026344;">Fácil</span></h1>
+          <p class="m-0">Tu cita, sin complicaciones</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-20">  
+        <!-- Como funciona cada propiedad -->
+        <!-- border-b-2 = "b" bottom y "2" grosor de 2px -->
+        <!-- border-transparent = El border no existe, es invisible al inicio, se utiliza para que el hover no salte, sino aparezca suavemente -->
+        <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
+        <!-- transition = activa animación, sin ser bruto -->
+        <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
+        <div class="text-[20px] border-b-2 border-transparent border-lime-400 text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div>
+        <a href="3-paginas/como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
+        <a href="3-paginas/contactos.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
+        <a href="3-paginas/iniciar-sesion.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Iniciar sesión</h2></div></a>
+      </div>
+        <!-- Como funciona cada propiedad -->
+      <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
+        <h2>Solicitar ayuda</h2>
+      </div> 
+    </header>
+
+<!-- Contenido del segundo container -->
+
+
+<!-- Contenido del tercer container -->
+    <div class="flex justify-center gap-32 mt-5 items-center bg-[#f0f3f1] h-36 px-2 w-fit mx-auto rounded-2xl">      
+      <div class="flex">
+        <div>
+          <img class="logo" src="Inicial/assistance.png" alt="Citafacil">
+        </div>
+        <div class="mt-5">
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h2>
+          <p class="m-0 w-[200px]">Te guiamos paso a paso durante todo el proceso.</p>
+        </div>
+      </div> 
+      <div class="flex">
+        <div>
+          <img class="w-36" src="Inicial/hands.png" alt="Citafacil">
+        </div>
+        <div class="mt-2">
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Seguro y legal</h2>
+          <p class="m-0 w-[200px]">Servicio transparente, legal y con total confidencialidad.</p>
+        </div>
+      </div>  
+      <div class="flex">
+        <div>
+          <img class="w-32" src="Inicial/shield.png" alt="Citafacil">
+        </div>
+        <div>
+          <h2 class="text-[25px] mt-5 m-0 font-semibold">Ahorra tiempo</h2>
+          <p class="m-0 w-[270px]">Nos encargamos de todo el proceso para que no pierdas tiempo.</p>
+        </div>
+      </div>
+      <div class="flex mr-6">
+        <div>
+          <img class="w-32" src="Inicial/clock.png" alt="Citafacil">
+        </div>
+        <div class="mt-5">
+          <h2 class="text-[25px] m-0 font-semibold">Aconpañamiento</h2>
+          <p class="m-0 w-[200px]">Atención cercana, paciente y adaptada a ti</p>
+        </div>
+      </div>
+    </div>
+<!-- Contenido del cuarto container -->
+    <header class="flex justify-center bg-[#026344] h-36 shadow mt-10 b-0">
+      <div class="flex flex-col items-start gap-3 text-white justify-start ml-24 mt-8">
+        <div class="text-[30px] font-semibold"><h2>Contacto</h2></div>
+        <div class="flex gap-14">
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../contacto/message.svg" alt=""><p>info@citafacil.com</p></div>
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/phone-volume-solid-full.svg" alt=""><p>+1 (555) 123-4567</p></div>
+          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/location-dot-solid-full.svg" alt=""><p>123 Main Street, City, State 12345</p></div>
+        </div>
+      </div> 
+      <div class="flex bg-white h-32 ml-24 mt-2 border border-white"></div>
+      <div class="ml-20 flex">
+          <div class="w-[400px] mt-12  text-white text-[20px]">
+            <p>Estamos para ayudarte, contactanos por el canal que prefieras</p>
+          </div>
+          <div class="flex ml-10 mt-12 gap-14">
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/facebook.png" alt=""></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="../guia/message.png" alt="Instagram"></div>
+            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/telephone.png" alt="LinkedIn"></div>
+          </div> 
+      </div> 
+    </header>
+  </main>
+</body>
+</html>
