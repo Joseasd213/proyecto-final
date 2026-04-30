@@ -1,7 +1,5 @@
 /* ===== VEHICLE SELECTION / SLIDER ===== */
 .productos {
-  position: relative;
-  flex-wrap: wrap;
   display: flex;
   justify-content: center;
 }
@@ -16,21 +14,16 @@
   position: relative;
   width: 1600px;
   top: 20px;
-  overflow: visible;
 }
 
 /* Track del slider */
 .slider-track {
   display: flex;
   gap: 50px;
-  height: 500px;
-  overflow-x: scroll;
+  height: 400px;
+  overflow-x: scroll; /**/
   scroll-behavior: smooth;
   padding: 5px 0;
-}
-
-.slider-track::-webkit-scrollbar {
-  display: none;
 }
 
 /* Tarjetas */
