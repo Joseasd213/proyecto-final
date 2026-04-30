@@ -20,7 +20,7 @@
 .slider-track {
   display: flex;
   gap: 50px;
-  height: 400px;
+  height: 460px;
   overflow-x: scroll; /**/
   scroll-behavior: smooth;
   padding: 5px 0;

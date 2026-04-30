@@ -11,7 +11,7 @@
     <header class="flex items-center gap-80 justify-center h-36 shadow">
       <div class="flex">
         <div>
-          <img class="logo" src="Inicial/logo.png" alt="">
+          <img class="logo" src="../Inicial/logo.png" alt="">
         </div>
         <div class="logo-words">
           <h1 class="text-[50px] m-0 font-semibold">Cita<span style="color:#026344;">Fácil</span></h1>
@@ -25,10 +25,10 @@
         <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
         <!-- transition = activa animación, sin ser bruto -->
         <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
-        <a href="../inicio.html"><div class="text-[20px] border-b-2 border-transparent border-lime-400 text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div></a>
-        <a href="3-paginas/como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
-        <a href="3-paginas/contactos.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
-        <a href="3-paginas/iniciar-sesion.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Iniciar sesión</h2></div></a>
+        <a href="../index.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer m-7"><h2>Inicio</h2></div></a>
+        <a href="como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
+        <a href="contacto.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
+        <a href="iniciar-session.html"><div class="text-[20px] border-b-2 border-lime-400 text-lime-400 transition cursor-pointer"><h2>Iniciar sesión</h2></div></a>
       </div>
         <!-- Como funciona cada propiedad -->
       <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
@@ -37,46 +37,33 @@
     </header>
 
 <!-- Contenido del segundo container -->
-
-
-<!-- Contenido del tercer container -->
-    <div class="flex justify-center gap-32 mt-5 items-center bg-[#f0f3f1] h-36 px-2 w-fit mx-auto rounded-2xl">      
-      <div class="flex">
-        <div>
-          <img class="logo" src="Inicial/assistance.png" alt="Citafacil">
+    <div class="flex justify-center mt-1">
+      <div class=" flex-1 w-[900px] absolute mr-[1000px] mb-[100px] pl-[100px] pb-[200px] pt-[80px] bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent">        
+        <h2 class="text-[45px] font-semibold">
+          Iniciar sesión
+        </h2>
+        <p class="text-[25px] mt-5 w-[600px]">
+          Bienvenido a tu cuenta, por favor ingresa tus datos para acceder a tu perfil y gestionar tus citas de manera fácil y rápida.
+        </p>
+        <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px] mt-[30px]">
+          <img src="" alt="">
+          <input 
+          type="text" 
+          placeholder="Buscar..." 
+          class="w-full outline-none bg-transparent"
+          >
         </div>
-        <div class="mt-5">
-          <h2 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h2>
-          <p class="m-0 w-[200px]">Te guiamos paso a paso durante todo el proceso.</p>
-        </div>
-      </div> 
-      <div class="flex">
-        <div>
-          <img class="w-36" src="Inicial/hands.png" alt="Citafacil">
-        </div>
-        <div class="mt-2">
-          <h2 class="text-[25px] mt-5 m-0 font-semibold">Seguro y legal</h2>
-          <p class="m-0 w-[200px]">Servicio transparente, legal y con total confidencialidad.</p>
-        </div>
-      </div>  
-      <div class="flex">
-        <div>
-          <img class="w-32" src="Inicial/shield.png" alt="Citafacil">
-        </div>
-        <div>
-          <h2 class="text-[25px] mt-5 m-0 font-semibold">Ahorra tiempo</h2>
-          <p class="m-0 w-[270px]">Nos encargamos de todo el proceso para que no pierdas tiempo.</p>
+        <div class="flex">
+          <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[160px] pr-[160px] text-white rounded-2xl mr-10">
+          <img src="../contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
+          <span class="mr-30px">Iniciar sesión</span>
+          </button>       
         </div>
       </div>
-      <div class="flex mr-6">
-        <div>
-          <img class="w-32" src="Inicial/clock.png" alt="Citafacil">
+      <!-- Contenido del container video -->
+        <div class="w-[1000px] max-w-[1200px] ml-[650px]">
+          <img class="ml-[40px] w-full" src="../Inicial/administracion.png" alt="">
         </div>
-        <div class="mt-5">
-          <h2 class="text-[25px] m-0 font-semibold">Aconpañamiento</h2>
-          <p class="m-0 w-[200px]">Atención cercana, paciente y adaptada a ti</p>
-        </div>
-      </div>
     </div>
 <!-- Contenido del cuarto container -->
     <header class="flex justify-center bg-[#026344] h-36 shadow mt-10 ">
