@@ -1,0 +1,101 @@
+/* ===== VEHICLE SELECTION / SLIDER ===== */
+
+.productos {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.productos h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Slider contenedor */
+.slider {
+  position: relative;
+  width: 1600px;
+  top: 20px;
+  overflow: visible;
+}
+
+/* Track del slider */
+.slider-track {
+  display: flex;
+  gap: 40px;
+  height: 500px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 5px 0;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas */
+.card {
+  flex: 0 0 500px;
+  height: 400px;
+  width: 1000px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Botón dentro de la card */
+.badge {
+  position: relative;
+  bottom: 60px;
+  left: 25px;
+  color: white;
+  border: solid black;
+  background: linear-gradient(to top, #636363, #6666665b);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 60px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to top, #777777, #888888);
+}
+
+/* Flechas */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #b9b9b9;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.arrow:hover {
+  background: #a0a0a0;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+  left: -35px;
+  top: 190px;
+}
+
+.arrow.right {
+  right: -55px;
+  top: 190px;
+}
