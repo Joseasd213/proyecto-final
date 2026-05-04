@@ -127,63 +127,70 @@
     </header>
   </main>
 
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script>
-    const SUPABASE_URL = "TU_SUPABASE_URL";
-    const SUPABASE_ANON_KEY = "TU_SUPABASE_ANON_KEY";
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+  // 🔥 PON AQUÍ TUS DATOS REALES
+const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";  
+const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
 
-    const { createClient } = supabase;
-    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  // ✅ crear cliente correctamente
+  const { createClient } = supabase;
+  const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const message = document.getElementById("message");
+  // inputs
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const message = document.getElementById("message");
 
-    document.getElementById("register").addEventListener("click", async () => {
-      message.textContent = "Registrando...";
-      message.className = "mt-6 text-lg font-medium text-blue-600";
+  // REGISTRO
+  document.getElementById("register").addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
+    if (!email || !password) {
+      alert("Rellena todos los campos");
+      return;
+    }
 
-      const { data, error } = await supabaseClient.auth.signUp({
-        email,
-        password
-      });
+    message.textContent = "Registrando...";
 
-      if (error) {
-        message.textContent = "Error al registrarse: " + error.message;
-        message.className = "mt-6 text-lg font-medium text-red-600";
-        return;
-      }
-
-      message.textContent = "Registro exitoso. Revisa tu correo si Supabase pide confirmación.";
-      message.className = "mt-6 text-lg font-medium text-green-600";
-      console.log("Registro:", data);
+    const { error } = await supabaseClient.auth.signUp({
+      email,
+      password
     });
 
-    document.getElementById("login").addEventListener("click", async () => {
-      message.textContent = "Iniciando sesión...";
-      message.className = "mt-6 text-lg font-medium text-blue-600";
+    if (error) {
+      message.textContent = "Error: " + error.message;
+      return;
+    }
 
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
+    message.textContent = "Usuario registrado ✔️";
+  });
 
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email,
-        password
-      });
+  // LOGIN
+  document.getElementById("login").addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
-      if (error) {
-        message.textContent = "Error al iniciar sesión: " + error.message;
-        message.className = "mt-6 text-lg font-medium text-red-600";
-        return;
-      }
+    if (!email || !password) {
+      alert("Rellena todos los campos");
+      return;
+    }
 
-      message.textContent = "Sesión iniciada correctamente.";
-      message.className = "mt-6 text-lg font-medium text-green-600";
-      console.log("Login:", data);
+    message.textContent = "Iniciando sesión...";
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password
     });
-  </script>
+
+    if (error) {
+      message.textContent = "Error: " + error.message;
+      return;
+    }
+
+    message.textContent = "Login correcto ✅";
+  });
+</script>
 </body>
 </html>
