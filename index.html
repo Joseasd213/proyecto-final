@@ -9,7 +9,7 @@
 <body>
   <main>
 <!-- Contenido del primer container -->
-    <header class="flex items-center gap-80 justify-center h-36 shadow">
+    <header class="flex items-center gap-60 justify-center h-36 shadow">
       <div class="flex">
         <div>
           <img class="logo" src="Inicial/logo.png" alt="">
@@ -19,7 +19,7 @@
           <p class="m-0">Tu cita, sin complicaciones</p>
         </div>
       </div>
-      <div class="flex items-center gap-20">  
+      <div class="flex items-center gap-28">  
         <!-- Como funciona cada propiedad -->
         <!-- border-b-2 = "b" bottom y "2" grosor de 2px -->
         <!-- border-transparent = El border no existe, es invisible al inicio, se utiliza para que el hover no salte, sino aparezca suavemente -->
@@ -29,21 +29,25 @@
         <a href="index.html"><div class="text-[20px] border-b-2 border-lime-400 text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div></a>
         <a href="3-paginas/como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
         <a href="3-paginas/contacto.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
-        <a href="3-paginas/iniciar-session.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Iniciar sesión</h2></div></a>
       </div>
         <!-- Como funciona cada propiedad -->
-      <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
-        <h2>Solicitar ayuda</h2>
-      </div> 
+      <div class="flex">
+        <a href="3-paginas/iniciar-session.html"><div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
+          <h2>Iniciar sesion</h2></a>
+        </div> 
+        <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
+          <h2>Solicitar ayuda</h2>
+        </div> 
+      </div>
     </header>
 
 <!-- Contenido del segundo container -->
     <div class="flex justify-center mt-1">
-      <div class=" flex-1 w-[900px] absolute mr-[1000px] p-20 bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent pb-[140px]">        
+      <div class="flex-1 w-[900px] h-[760px] absolute mr-[1000px] p-20 bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent pb-[140px]">        
         <h2 class="text-[45px] font-semibold">
           Te ayudamos a conseguis tus citas administrativas de forma fácil, rápida y segura
         </h2>
-        <p class="text-[25px] mt-5">
+        <p class="text-[25px] mt-5 w-[700px]">
           Acompañamos a personas con dificultades digitales, personas mayores e inmigrantes en la gestion de citas y tramites con la amonostracion publica
         </p>
         <div class="flex">
@@ -64,8 +68,8 @@
             </div>
         </div>
       <!-- Contenido del container video -->
-        <div class="w-[1100px] max-w-[1200px] ml-[650px]">
-          <img class="ml-[40px] w-full" src="Inicial/administracion.png" alt="">
+        <div class="w-[1100px] max-w-[1200px] ml-[600px]">
+          <img class="ml-[100px] w-full" src="Inicial/administracion.png" alt="">
         </div>
     </div>
 <!-- Contenido del tercer container -->
