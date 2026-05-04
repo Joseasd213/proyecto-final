@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <title>Iniciar sesión</title>
 </head>
 <body>
   <main>
-<!-- Contenido del primer container -->
+    <!-- Contenido del primer container -->
     <header class="flex items-center gap-60 justify-center h-36 shadow">
       <div class="flex">
         <div>
@@ -18,93 +19,149 @@
           <p class="m-0">Tu cita, sin complicaciones</p>
         </div>
       </div>
-      <div class="flex items-center gap-28">  
-        <!-- Como funciona cada propiedad -->
-        <!-- border-b-2 = "b" bottom y "2" grosor de 2px -->
-        <!-- border-transparent = El border no existe, es invisible al inicio, se utiliza para que el hover no salte, sino aparezca suavemente -->
-        <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
-        <!-- transition = activa animación, sin ser bruto -->
-        <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
-        <a href="../index.html"><div class="text-[20px] border-transparent border-b-2 hover:border-lime-400 hover:text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div></a>
-        <a href="como.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
-        <a href="contacto.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
+
+      <div class="flex items-center gap-28">
+        <a href="../index.html">
+          <div class="text-[20px] border-transparent border-b-2 hover:border-lime-400 hover:text-lime-400 cursor-pointer m-7">
+            <h2>Inicio</h2>
+          </div>
+        </a>
+        <a href="como.html">
+          <div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer">
+            <h2>Como funciona</h2>
+          </div>
+        </a>
+        <a href="contacto.html">
+          <div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer">
+            <h2>Contactos</h2>
+          </div>
+        </a>
       </div>
-        <!-- Como funciona cada propiedad -->
+
       <div class="flex gap-20 text-center items-center">
-        <a href="3-paginas/contacto.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Iniciar sesion</h2></div></a>
-        <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
+        <a href="3-paginas/contacto.html">
+          <div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer">
+            <h2>Iniciar sesion</h2>
+          </div>
+        </a>
+        <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center text-white rounded-2xl mr-8">
           <h2>Solicitar ayuda</h2>
-        </div> 
+        </div>
       </div>
     </header>
-<!-- Contenido del segundo container -->
+
+    <!-- Contenido del segundo container -->
     <div class="flex justify-center mt-1">
-      <div class="flex-1 w-[900px] h-[760px] absolute mr-[1000px] p-20 bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent pb-[140px">        
-        <h2 class="text-[45px] font-semibold">
-          Iniciar sesión
-        </h2>
+      <div class="flex-1 w-[900px] h-[760px] absolute mr-[1000px] p-20 bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent pb-[140px]">
+        <h2 class="text-[45px] font-semibold">Iniciar sesión</h2>
+
         <p class="text-[25px] mt-5 w-[600px]">
           Bienvenido a tu cuenta, por favor ingresa tus datos para acceder a tu perfil y gestionar tus citas de manera fácil y rápida.
         </p>
+
         <h2 class="mt-[30px] text-[20px] mb-2">Correo Electrónico</h2>
         <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px]">
-          <img src="" alt="">
-          <input 
-          type="text" 
-          placeholder="Buscar..." 
-          class="w-full outline-none bg-transparent"
+          <input
+            type="email"
+            id="email"
+            placeholder="Tu correo electrónico"
+            class="w-full outline-none bg-transparent"
           >
         </div>
+
         <h2 class="mt-[30px] text-[20px] mb-2">Contraseña</h2>
         <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px]">
-          <img src="" alt="">
-          <input 
-          type="text" 
-          placeholder="Buscar..." 
-          class="w-full outline-none bg-transparent"
+          <input
+            type="password"
+            id="password"
+            placeholder="Tu contraseña"
+            class="w-full outline-none bg-transparent"
           >
         </div>
-        <div class="flex">
-          <button class="flex items-center justify-center text-[20px] mt-[40px] bg-[#026344] h-16 pl-[102px] pr-[110px] text-white rounded-2xl mr-10">
-          <img src="../contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
-          <span class="mr-30px">Continuar con WhatsApp</span>
-          </button>       
+
+        <div class="flex gap-4 mt-[40px]">
+          <button
+            id="register"
+            class="flex items-center justify-center text-[20px] bg-gray-700 h-16 px-8 text-white rounded-2xl"
+          >
+            Registrarse
+          </button>
+
+          <button
+            id="login"
+            class="flex items-center justify-center text-[20px] bg-[#026344] h-16 px-8 text-white rounded-2xl"
+          >
+            Iniciar sesión
+          </button>
         </div>
-        <div class="flex">
-          <button class="flex items-center justify-center text-[20px] mt-[21px] bg-[#026344] h-16 pl-[120px] pr-[120px] text-white rounded-2xl mr-10">
-          <img src="../contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
-          <span class="mr-30px">Continuar con Google</span>
-          </button>       
-        </div>
+
+        <p id="message" class="mt-6 text-lg font-medium"></p>
       </div>
+
       <!-- Contenido del container video -->
-        <div class="w-[1100px] max-w-[1200px] ml-[720px]">
-          <img class="ml-[40px] w-full" src="../Inicial/administracion.png" alt="">
-        </div>
+      <div class="w-[1100px] max-w-[1200px] ml-[720px]">
+        <img class="ml-[40px] w-full" src="../Inicial/administracion.png" alt="">
+      </div>
     </div>
-<!-- Contenido del cuarto container -->
-    <header class="flex justify-center bg-[#026344] h-36 shadow mt-[40px] ">
-      <div class="flex flex-col items-start gap-3 text-white justify-start ml-24 mt-8">
-        <div class="text-[30px] font-semibold"><h2>Contacto</h2></div>
-        <div class="flex gap-14">
-          <div class="flex items-center"><img class="w-[30px] mr-2" src="../contacto/message.svg" alt=""><p>info@citafacil.com</p></div>
-          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/phone-volume-solid-full.svg" alt=""><p>+1 (555) 123-4567</p></div>
-          <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/location-dot-solid-full.svg" alt=""><p>123 Main Street, City, State 12345</p></div>
-        </div>
-      </div> 
-      <div class="flex bg-white h-32 ml-24 mt-2 border border-white"></div>
-      <div class="ml-20 flex">
-          <div class="w-[400px] mt-12  text-white text-[20px]">
-            <p>Estamos para ayudarte, contactanos por el canal que prefieras</p>
-          </div>
-          <div class="flex ml-10 mt-12 gap-14">
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/facebook.png" alt=""></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="../guia/message.png" alt="Instagram"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/telephone.png" alt="LinkedIn"></div>
-          </div> 
-      </div> 
-    </header>
   </main>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "TU_SUPABASE_URL";
+    const SUPABASE_ANON_KEY = "TU_SUPABASE_ANON_KEY";
+
+    const { createClient } = supabase;
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const message = document.getElementById("message");
+
+    document.getElementById("register").addEventListener("click", async () => {
+      message.textContent = "Registrando...";
+      message.className = "mt-6 text-lg font-medium text-blue-600";
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      const { data, error } = await supabaseClient.auth.signUp({
+        email,
+        password
+      });
+
+      if (error) {
+        message.textContent = "Error al registrarse: " + error.message;
+        message.className = "mt-6 text-lg font-medium text-red-600";
+        return;
+      }
+
+      message.textContent = "Registro exitoso. Revisa tu correo si Supabase pide confirmación.";
+      message.className = "mt-6 text-lg font-medium text-green-600";
+      console.log("Registro:", data);
+    });
+
+    document.getElementById("login").addEventListener("click", async () => {
+      message.textContent = "Iniciando sesión...";
+      message.className = "mt-6 text-lg font-medium text-blue-600";
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        message.textContent = "Error al iniciar sesión: " + error.message;
+        message.className = "mt-6 text-lg font-medium text-red-600";
+        return;
+      }
+
+      message.textContent = "Sesión iniciada correctamente.";
+      message.className = "mt-6 text-lg font-medium text-green-600";
+      console.log("Login:", data);
+    });
+  </script>
 </body>
 </html>
