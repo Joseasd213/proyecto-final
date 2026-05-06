@@ -40,7 +40,7 @@
 
       <div class="flex gap-20 text-center items-center">
         <a href="iniciar-session.html">
-          <div class="text-[20px] border-b-2  border-lime-400 text-lime-400 transition cursor-pointer">
+          <div class="text-[20px] border-b-2 border-lime-400 text-lime-400 transition cursor-pointer">
             <h2>Iniciar sesion</h2>
           </div>
         </a>
@@ -93,9 +93,13 @@
           >
             Iniciar sesión
           </button>
+          <button id="logout" class="h-16 px-8 bg-red-600 text-white rounded-xl">
+            Cerrar sesión
+          </button>
         </div>
 
         <p id="message" class="mt-6 text-lg font-medium"></p>
+        <p id="userName" class="mt-2 text-2xl font-semibold text-green-700"></p>
       </div>
 
       <!-- Contenido del container video -->
@@ -103,7 +107,8 @@
         <img class="ml-[40px] w-full" src="../Inicial/administracion.png" alt="">
       </div>
     </div>
-    <header class="flex justify-center bg-[#026344] h-36 shadow mt-10 ">
+
+    <header class="flex justify-center bg-[#026344] h-36 shadow mt-10">
       <div class="flex flex-col items-start gap-3 text-white justify-start ml-24 mt-8">
         <div class="text-[30px] font-semibold"><h2>Contacto</h2></div>
         <div class="flex gap-14">
@@ -111,86 +116,107 @@
           <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/phone-volume-solid-full.svg" alt=""><p>+1 (555) 123-4567</p></div>
           <div class="flex items-center"><img class="w-[30px] mr-2" src="../guia/location-dot-solid-full.svg" alt=""><p>123 Main Street, City, State 12345</p></div>
         </div>
-      </div> 
+      </div>
       <div class="flex bg-white h-32 ml-24 mt-2 border border-white"></div>
       <div class="ml-20 flex">
-          <div class="w-[400px] mt-12  text-white text-[20px]">
-            <p>Estamos para ayudarte, contactanos por el canal que prefieras</p>
-          </div>
-          <div class="flex ml-10 mt-12 gap-14">
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/facebook.png" alt=""></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="../guia/message.png" alt="Instagram"></div>
-            <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/telephone.png" alt="LinkedIn"></div>
-          </div> 
-      </div> 
+        <div class="w-[400px] mt-12 text-white text-[20px]">
+          <p>Estamos para ayudarte, contactanos por el canal que prefieras</p>
+        </div>
+        <div class="flex ml-10 mt-12 gap-14">
+          <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/facebook.png" alt=""></div>
+          <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover" src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>
+          <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-2" src="../guia/message.png" alt="Instagram"></div>
+          <div class="w-16 h-16 bg-white rounded-full"><img class="object-cover mt-1" src="../Inicial/telephone.png" alt="LinkedIn"></div>
+        </div>
+      </div>
     </header>
   </main>
 
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-<script>
-  // 🔥 PON AQUÍ TUS DATOS REALES
-const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";  
-const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
 
-  // ✅ crear cliente correctamente
-  const { createClient } = supabase;
-  const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const { createClient } = supabase;
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  // inputs
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-  const message = document.getElementById("message");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const message = document.getElementById("message");
+    const userName = document.getElementById("userName");
 
-  // REGISTRO
-  document.getElementById("register").addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (!email || !password) {
-      alert("Rellena todos los campos");
-      return;
+    function showNameFromEmail(email) {
+      const nombre = email.split("@")[0];
+      userName.textContent = "Bienvenido, " + nombre;
     }
 
-    message.textContent = "Registrando...";
+    document.getElementById("register").addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
 
-    const { error } = await supabaseClient.auth.signUp({
-      email,
-      password
+      if (!email || !password) {
+        message.textContent = "Rellena todos los campos";
+        return;
+      }
+
+      message.textContent = "Registrando...";
+      userName.textContent = "";
+
+      const { error } = await supabaseClient.auth.signUp({
+        email,
+        password
+      });
+
+      if (error) {
+        message.textContent = "Error: " + error.message;
+        return;
+      }
+
+      message.textContent = "Usuario registrado ✔️";
     });
 
-    if (error) {
-      message.textContent = "Error: " + error.message;
-      return;
-    }
+    document.getElementById("login").addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
 
-    message.textContent = "Usuario registrado ✔️";
-  });
+      if (!email || !password) {
+        message.textContent = "Rellena todos los campos";
+        return;
+      }
 
-  // LOGIN
-  document.getElementById("login").addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+      message.textContent = "Iniciando sesión...";
 
-    if (!email || !password) {
-      alert("Rellena todos los campos");
-      return;
-    }
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
 
-    message.textContent = "Iniciando sesión...";
+      if (error) {
+        message.textContent = "Error: " + error.message;
+        return;
+      }
 
-    const { error } = await supabaseClient.auth.signInWithPassword({
-      email,
-      password
+      message.textContent = "Login correcto ✅";
+      if (data?.user?.email) {
+        showNameFromEmail(data.user.email);
+      }
     });
 
-    if (error) {
-      message.textContent = "Error: " + error.message;
-      return;
-    }
+    supabaseClient.auth.getSession().then(({ data }) => {
+      if (data.session?.user?.email) {
+        showNameFromEmail(data.session.user.email);
+      }
+    });
 
-    message.textContent = "Login correcto ✅";
-  });
-</script>
+    document.getElementById("logout").addEventListener("click", async () => {
+      await supabaseClient.auth.signOut();
+
+      document.getElementById("message").textContent = "Sesión cerrada ❌";
+      document.getElementById("userName").textContent = "";
+
+      // opcional: redirigir
+      window.location.href = "iniciar-session.html";
+    });
+  </script>
 </body>
 </html>
