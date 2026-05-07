@@ -122,3 +122,62 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 });
+
+// ----------------------------
+// FORMULARIO CONTACTO SUPABASE
+// ----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+  const btn = document.getElementById("sendMessage");
+
+  const nombre = document.getElementById("nombre");
+  const email = document.getElementById("email");
+  const asunto = document.getElementById("asunto");
+  const mensaje = document.getElementById("mensaje");
+
+  if (!btn) return;
+
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const nombreVal = nombre.value.trim();
+    const emailVal = email.value.trim();
+    const asuntoVal = asunto.value.trim();
+    const mensajeVal = mensaje.value.trim();
+
+    // VALIDACIÓN
+    if (!nombreVal || !emailVal || !mensajeVal) {
+      alert("Rellena nombre, email y mensaje");
+      return;
+    }
+
+    btn.textContent = "Enviando...";
+
+    const { error } = await supabaseClient
+      .from("contactos")
+      .insert([
+        {
+          nombre: nombreVal,
+          email: emailVal,
+          asunto: asuntoVal,
+          mensaje: mensajeVal
+        }
+      ]);
+
+    btn.textContent = "Enviar mensaje";
+
+    if (error) {
+      alert("Error: " + error.message);
+      return;
+    }
+
+    alert("Mensaje enviado ✔️");
+
+    // limpiar campos
+    nombre.value = "";
+    email.value = "";
+    asunto.value = "";
+    mensaje.value = "";
+  });
+
+});
