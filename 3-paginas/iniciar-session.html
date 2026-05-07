@@ -9,44 +9,36 @@
 <body>
   <main>
     <!-- Contenido del primer container -->
-    <header class="flex items-center gap-60 justify-center h-36 shadow">
-      <div class="flex">
-        <div>
-          <img class="logo" src="../Inicial/logo.png" alt="">
+    <header class="flex items-center gap-[500px] justify-center h-36 shadow">
+      <div class="gap-[50px] flex">
+        <div class="flex">
+          <div>
+            <img class="logo" src="../Inicial/logo.png" alt="">
+          </div>
+          <div class="logo-words">
+            <h1 class="text-[50px] m-0 font-semibold">Cita<span style="color:#026344;">Fácil</span></h1>
+            <p class="m-0">Tu cita, sin complicaciones</p>
+          </div>
         </div>
-        <div class="logo-words">
-          <h1 class="text-[50px] m-0 font-semibold">Cita<span style="color:#026344;">Fácil</span></h1>
-          <p class="m-0">Tu cita, sin complicaciones</p>
+        <div class="flex items-center gap-28">  
+          <!-- Como funciona cada propiedad -->
+          <!-- border-b-2 = "b" bottom y "2" grosor de 2px -->
+          <!-- border-transparent = El border no existe, es invisible al inicio, se utiliza para que el hover no salte, sino aparezca suavemente -->
+          <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
+          <!-- transition = activa animación, sin ser bruto -->
+          <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
+          <a href="../index.html"><div class="text-[20px] border-transparent border-b-2 hover:border-lime-400 hover:text-lime-400 cursor-pointer m-7"><h2>Inicio</h2></div></a>
+          <a href="como.html"><div class="text-[20px] border-b-2 border-transparent  hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Como funciona</h2></div></a>
+          <a href="contacto.html"><div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer"><h2>Contactos</h2></div></a>
         </div>
       </div>
-
-      <div class="flex items-center gap-28">
-        <a href="../index.html">
-          <div class="text-[20px] border-transparent border-b-2 hover:border-lime-400 hover:text-lime-400 cursor-pointer m-7">
-            <h2>Inicio</h2>
-          </div>
-        </a>
-        <a href="como.html">
-          <div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer">
-            <h2>Como funciona</h2>
-          </div>
-        </a>
-        <a href="contacto.html">
-          <div class="text-[20px] border-b-2 border-transparent hover:border-lime-400 hover:text-lime-400 transition cursor-pointer">
-            <h2>Contactos</h2>
-          </div>
-        </a>
-      </div>
-
+        <!-- Como funciona cada propiedad -->
       <div class="flex gap-20 text-center items-center">
-        <a href="iniciar-session.html">
-          <div class="text-[20px] border-b-2 border-lime-400 text-lime-400 transition cursor-pointer">
-            <h2>Iniciar sesion</h2>
-          </div>
-        </a>
-        <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center text-white rounded-2xl mr-8">
+        <p id="userName" class="absolute text-2xl font-semibold text-green-700 left-[1100px]"></p>
+        <a href="iniciar-session.html"><div class="text-[20px] border-b-2 border-lime-400 text-lime-400 transition cursor-pointer"><h2>Iniciar sesion</h2></div></a>
+        <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center  text-white rounded-2xl mr-8">
           <h2>Solicitar ayuda</h2>
-        </div>
+        </div> 
       </div>
     </header>
 
@@ -99,7 +91,6 @@
         </div>
 
         <p id="message" class="mt-6 text-lg font-medium"></p>
-        <p id="userName" class="mt-2 text-2xl font-semibold text-green-700"></p>
       </div>
 
       <!-- Contenido del container video -->
@@ -131,92 +122,9 @@
       </div>
     </header>
   </main>
-
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script>
-    const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";
-    const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
+  <script src="supabase.js">
 
-    const { createClient } = supabase;
-    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
-
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const message = document.getElementById("message");
-    const userName = document.getElementById("userName");
-
-    function showNameFromEmail(email) {
-      const nombre = email.split("@")[0];
-      userName.textContent = "Bienvenido, " + nombre;
-    }
-
-    document.getElementById("register").addEventListener("click", async () => {
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      if (!email || !password) {
-        message.textContent = "Rellena todos los campos";
-        return;
-      }
-
-      message.textContent = "Registrando...";
-      userName.textContent = "";
-
-      const { error } = await supabaseClient.auth.signUp({
-        email,
-        password
-      });
-
-      if (error) {
-        message.textContent = "Error: " + error.message;
-        return;
-      }
-
-      message.textContent = "Usuario registrado ✔️";
-    });
-
-    document.getElementById("login").addEventListener("click", async () => {
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      if (!email || !password) {
-        message.textContent = "Rellena todos los campos";
-        return;
-      }
-
-      message.textContent = "Iniciando sesión...";
-
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email,
-        password
-      });
-
-      if (error) {
-        message.textContent = "Error: " + error.message;
-        return;
-      }
-
-      message.textContent = "Login correcto ✅";
-      if (data?.user?.email) {
-        showNameFromEmail(data.user.email);
-      }
-    });
-
-    supabaseClient.auth.getSession().then(({ data }) => {
-      if (data.session?.user?.email) {
-        showNameFromEmail(data.session.user.email);
-      }
-    });
-
-    document.getElementById("logout").addEventListener("click", async () => {
-      await supabaseClient.auth.signOut();
-
-      document.getElementById("message").textContent = "Sesión cerrada ❌";
-      document.getElementById("userName").textContent = "";
-
-      // opcional: redirigir
-      window.location.href = "iniciar-session.html";
-    });
   </script>
 </body>
 </html>
