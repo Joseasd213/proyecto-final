@@ -2,9 +2,6 @@
 
 # Todo
 Implementar hovers
-Meter shadows debajo del header
-Añadir enlaces rapidos debajo del header 
-<img width="1032" height="151" alt="image" src="https://github.com/user-attachments/assets/56bbc306-4801-42f9-a578-aa37a8ef30f7" />
 
 # Index
 Añadir options en el index.html de buscador
