@@ -5,9 +5,14 @@ Implementar hovers 40% restante
 
 # Index
 Añadir options en el index.html de buscador
+Añadir paginas del contenido solicitado
 
 # Iniciar Sesion
 Añadir iniciar sesion con Google y Discord
+
+# Como funciona
+Simplificar el slider (La gente esta más acostumbrado a deslizar por abajo en vez de por los lados) hecho
+
 
 # Contacto
 Cookies y politica

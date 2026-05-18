@@ -11,19 +11,21 @@
 
 /* Slider contenedor */
 .slider {
+  justify-content: center;
+  display: flex;
   position: relative;
-  width: 1600px;
+  width: 1800px;
+  height: 600px;
   top: 20px;
 }
 
 /* Track del slider */
 .slider-track {
-  display: flex;
-  gap: 50px;
-  height: 460px;
+  gap: 1050px;
   overflow-x: scroll; /**/
   scroll-behavior: smooth;
   padding: 5px 0;
+  height: 600px;
 }
 
 /* Tarjetas */
@@ -31,14 +33,13 @@
   align-items: center;
   padding: 30px;
   border: solid 1px;
-  flex: 0 0 500px;
-  height: 400px;
-  width: 1000px;
+  height: auto;
+  margin: 20px;
+  width: auto;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
   align-items: center;
-  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
