@@ -1,7 +1,7 @@
 ## Ideas 12/05/2026
 
 # Todo
-Implementar hovers
+Implementar hovers 40% restante
 
 # Index
 Añadir options en el index.html de buscador
