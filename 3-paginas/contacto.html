@@ -94,59 +94,68 @@
               </div>
             </div> 
           </div>
-          <div class="w-[800px] h-[1000px] border-2 border-black rounded-[10px]">
-            <div class="m-[50px]">
-              <h2 class="text-[45px] font-semibold">
-                <span class="text-[#026344]">Formulario de contacto</span>
-              </h2>
-              <!-- Nombre -->
-              <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
-                <input
-                  id="nombre"
-                  type="text"
-                  placeholder="Tu nombre"
-                  class="w-full outline-none bg-transparent">
+            <form id="contactForm" class="w-[800px] h-[1000px] border-2 border-black rounded-[10px]">
+              <div class="m-[50px]">
+
+                <h2 class="text-[45px] font-semibold">
+                  <span class="text-[#026344]">Formulario de contacto</span>
+                </h2>
+
+                <!-- Nombre -->
+                <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
+                  <input
+                    id="nombre"
+                    type="text"
+                    placeholder="Tu nombre"
+                    class="w-full outline-none bg-transparent">
+                </div>
+
+                <!-- Email -->
+                <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Tu correo electrónico"
+                    class="w-full outline-none bg-transparent">
+                </div>
+
+                <!-- Asunto -->
+                <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
+                  <input
+                    id="asunto"
+                    type="text"
+                    placeholder="Asunto"
+                    class="w-full outline-none bg-transparent">
+                </div>
+
+                <!-- Mensaje -->
+                <div class="border border-gray-300 rounded-2xl px-7 py-7 w-[700px] h-[300px] mt-5">
+                  <textarea
+                    id="mensaje"
+                    placeholder="Escribe tu mensaje..."
+                    class="w-full h-full outline-none bg-transparent resize-none"></textarea>
+                </div>
+
+                <!-- Botón -->
+                <button
+                  id="sendMessage"
+                  type="submit"
+                  class="flex items-center justify-center text-[20px] mt-[21px] bg-[#026344] h-16 w-[700px] text-white rounded-2xl">
+
+                  Enviar mensaje
+
+                </button>
+
+                <!-- aviso -->
+                <div class="flex mt-[20px] gap-2">
+                  <img src="../guia/LOCK.svg" alt="">
+                  <p class="text-[20px]">
+                    Al enviar este formulario, aceptas nuestra
+                    <span class="text-[#026344]">política de privacidad</span>.
+                  </p>
+                </div>
               </div>
-              <!-- Email -->
-              <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  class="w-full outline-none bg-transparent">
-              </div>
-              <!-- Asunto -->
-              <div class="flex border border-gray-300 rounded-2xl px-7 py-7 w-[700px] mt-5">
-                <input
-                  id="asunto"
-                  type="text"
-                  placeholder="Asunto"
-                  class="w-full outline-none bg-transparent">
-              </div>
-              <!-- Mensaje -->
-              <div class="border border-gray-300 rounded-2xl px-7 py-7 w-[700px] h-[300px] mt-5 text-start">
-                <textarea
-                  id="mensaje"
-                  placeholder="Escribe tu mensaje..."
-                  class="w-full h-full outline-none bg-transparent resize-none"
-                ></textarea>
-              </div>
-              <!-- Botón -->
-              <button
-                id="sendMessage"
-                class="flex items-center justify-center text-[20px] mt-[21px] bg-[#026344] h-16 w-[700px] text-white rounded-2xl">
-                <span>Enviar mensaje</span>
-              </button>
-              <!-- aviso -->
-              <div class="flex mt-[20px] gap-2">
-                <img src="../guia/LOCK.svg" alt="">
-                <p class="text-[20px]">
-                  Al enviar este formulario, aceptas nuestra
-                  <span class="text-[#026344]">política de privacidad</span>.
-                </p>
-              </div>
-            </div>
-          </div>
+            </form>
         </div>
       </div>
   <!-- Contenido del tercer container -->

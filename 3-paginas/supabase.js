@@ -1,12 +1,9 @@
 const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";
 const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
 
-const { createClient } = supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// 🔥 IMPORTANTE: DOM listo
 document.addEventListener("DOMContentLoaded", async () => {
-
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const message = document.getElementById("message");
@@ -16,33 +13,49 @@ document.addEventListener("DOMContentLoaded", async () => {
   const loginBtn = document.getElementById("login");
   const logoutBtn = document.getElementById("logout");
 
-  // ----------------------------
-  // MOSTRAR USUARIO
-  // ----------------------------
-  function showNameFromEmail(email) {
-    const nombre = email.split("@")[0];
+  const contactForm = document.getElementById("contactForm");
+  const sendBtn = document.getElementById("sendMessage");
 
-    if (userName) {
-      userName.textContent = "Bienvenido, " + nombre;
-    }
-  }
+  const setMessage = (text) => {
+    if (message) message.textContent = text;
+  };
 
-  function clearSessionUI() {
-    if (userName) {
-      userName.textContent = "";
-    }
-  }
+  const showUser = (email) => {
+    if (!userName || !email) return;
+    userName.textContent = "Bienvenido, " + email.split("@")[0];
+  };
 
-  // ----------------------------
-  // REGISTRO
-  // ----------------------------
+  const clearUser = () => {
+    if (userName) userName.textContent = "";
+  };
+
+  const hasUserName = () => {
+    return Boolean(userName?.textContent.trim());
+  };
+
+  const requireUserName = () => {
+    if (hasUserName()) return true;
+
+    alert("Debes iniciar sesion antes de enviar un mensaje");
+    window.location.href = "iniciar-session.html";
+    return false;
+  };
+
+  const getAuthValues = () => {
+    return {
+      email: emailInput?.value.trim() || "",
+      password: passwordInput?.value.trim() || ""
+    };
+  };
+
   if (registerBtn) {
-    registerBtn.addEventListener("click", async () => {
-      const email = emailInput?.value.trim();
-      const password = passwordInput?.value.trim();
+    registerBtn.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const { email, password } = getAuthValues();
 
       if (!email || !password) {
-        if (message) message.textContent = "Rellena todos los campos";
+        setMessage("Rellena todos los campos");
         return;
       }
 
@@ -52,24 +65,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       if (error) {
-        if (message) message.textContent = "Error: " + error.message;
+        setMessage("Error: " + error.message);
         return;
       }
 
-      if (message) message.textContent = "Usuario registrado ✔️";
+      setMessage("Usuario registrado");
     });
   }
 
-  // ----------------------------
-  // LOGIN
-  // ----------------------------
   if (loginBtn) {
-    loginBtn.addEventListener("click", async () => {
-      const email = emailInput?.value.trim();
-      const password = passwordInput?.value.trim();
+    loginBtn.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const { email, password } = getAuthValues();
 
       if (!email || !password) {
-        if (message) message.textContent = "Rellena todos los campos";
+        setMessage("Rellena todos los campos");
         return;
       }
 
@@ -79,105 +90,145 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       if (error) {
-        if (message) message.textContent = "Error: " + error.message;
+        setMessage("Error: " + error.message);
         return;
       }
 
-      if (message) message.textContent = "Login correcto ✅";
-
-      if (data?.user?.email) {
-        showNameFromEmail(data.user.email);
-      }
+      setMessage("Login correcto");
+      showUser(data?.user?.email);
     });
   }
 
-  // ----------------------------
-  // LOGOUT
-  // ----------------------------
   if (logoutBtn) {
-    logoutBtn.addEventListener("click", async () => {
+    logoutBtn.addEventListener("click", async (event) => {
+      event.preventDefault();
+
       const { error } = await supabaseClient.auth.signOut();
 
       if (error) {
-        if (message) message.textContent = "Error: " + error.message;
+        setMessage("Error: " + error.message);
         return;
       }
 
-      if (message) message.textContent = "Sesión cerrada ❌";
-      clearSessionUI();
+      setMessage("Sesion cerrada");
+      clearUser();
     });
   }
 
-  // ----------------------------
-  // SESIÓN AUTOMÁTICA (CLAVE)
-  // ----------------------------
-  const { data } = await supabaseClient.auth.getSession();
+  const { data: sessionData } = await supabaseClient.auth.getSession();
 
-  if (data?.session?.user?.email) {
-    showNameFromEmail(data.session.user.email);
-
-    if (message) {
-      message.textContent = "Sesión activa ✅";
-    }
+  if (sessionData?.session?.user?.email) {
+    showUser(sessionData.session.user.email);
+    setMessage("Sesion activa");
   }
 
-});
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-// ----------------------------
-// FORMULARIO CONTACTO SUPABASE
-// ----------------------------
-document.addEventListener("DOMContentLoaded", () => {
+      if (!requireUserName()) return;
 
-  const btn = document.getElementById("sendMessage");
+      const {
+        data: { user },
+        error: userError
+      } = await supabaseClient.auth.getUser();
 
-  const nombre = document.getElementById("nombre");
-  const email = document.getElementById("email");
-  const asunto = document.getElementById("asunto");
-  const mensaje = document.getElementById("mensaje");
+      if (userError || !user) {
+        alert("Debes iniciar sesion");
+        window.location.href = "iniciar-session.html";
+        return;
+      }
 
-  if (!btn) return;
+      const nombreInput = contactForm.querySelector("#nombre");
+      const contactEmailInput = contactForm.querySelector("#email");
+      const asuntoInput = contactForm.querySelector("#asunto");
+      const mensajeInput = contactForm.querySelector("#mensaje");
 
-  btn.addEventListener("click", async (e) => {
-    e.preventDefault();
+      const nombre = nombreInput?.value.trim() || "";
+      const email = contactEmailInput?.value.trim() || "";
+      const asunto = asuntoInput?.value.trim() || "";
+      const mensaje = mensajeInput?.value.trim() || "";
 
-    const nombreVal = nombre.value.trim();
-    const emailVal = email.value.trim();
-    const asuntoVal = asunto.value.trim();
-    const mensajeVal = mensaje.value.trim();
+      if (!nombre || !email || !mensaje) {
+        alert("Completa nombre, email y mensaje");
+        return;
+      }
 
-    // VALIDACIÓN
-    if (!nombreVal || !emailVal || !mensajeVal) {
-      alert("Rellena nombre, email y mensaje");
-      return;
-    }
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.textContent = "Enviando...";
+      }
 
-    btn.textContent = "Enviando...";
-
-    const { error } = await supabaseClient
-      .from("contactos")
-      .insert([
+      const { error } = await supabaseClient.from("contactos").insert([
         {
-          nombre: nombreVal,
-          email: emailVal,
-          asunto: asuntoVal,
-          mensaje: mensajeVal
+          user_id: user.id,
+          nombre,
+          email,
+          asunto,
+          mensaje
         }
       ]);
 
-    btn.textContent = "Enviar mensaje";
+      if (sendBtn) {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Enviar mensaje";
+      }
 
-    if (error) {
-      alert("Error: " + error.message);
-      return;
-    }
+      if (error) {
+        alert("Error: " + error.message);
+        return;
+      }
 
-    alert("Mensaje enviado ✔️");
+      alert("Mensaje enviado");
+      contactForm.reset();
+    });
+  } else if (sendBtn) {
+    sendBtn.addEventListener("click", async (event) => {
+      event.preventDefault();
 
-    // limpiar campos
-    nombre.value = "";
-    email.value = "";
-    asunto.value = "";
-    mensaje.value = "";
-  });
+      if (!requireUserName()) return;
 
+      const nombreInput = document.getElementById("nombre");
+      const contactEmailInput = document.getElementById("email");
+      const asuntoInput = document.getElementById("asunto");
+      const mensajeInput = document.getElementById("mensaje");
+
+      const nombre = nombreInput?.value.trim() || "";
+      const email = contactEmailInput?.value.trim() || "";
+      const asunto = asuntoInput?.value.trim() || "";
+      const mensaje = mensajeInput?.value.trim() || "";
+
+      if (!nombre || !email || !mensaje) {
+        alert("Completa nombre, email y mensaje");
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Enviando...";
+
+      const { error } = await supabaseClient.from("contactos").insert([
+        {
+          nombre,
+          email,
+          asunto,
+          mensaje
+        }
+      ]);
+
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Enviar mensaje";
+
+      if (error) {
+        alert("Error: " + error.message);
+        return;
+      }
+
+      alert("Mensaje enviado");
+
+      if (nombreInput) nombreInput.value = "";
+      if (contactEmailInput) contactEmailInput.value = "";
+      if (asuntoInput) asuntoInput.value = "";
+      if (mensajeInput) mensajeInput.value = "";
+    });
+  }
 });
