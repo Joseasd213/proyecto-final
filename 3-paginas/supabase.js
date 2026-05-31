@@ -1,3 +1,4 @@
+// supabase
 const SUPABASE_URL = "https://suslmhxemfbouvepchza.supabase.co";
 const SUPABASE_KEY = "sb_publishable_v3ugpHrykJPH0hC4BQ-0xA_nGl7YBuu";
 
@@ -233,3 +234,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
+
+
+//Lo mio
+
+const change = document.querySelector("#otro");
+const google = document.querySelector("#google")
+
+change.addEventListener("click", cambiar)
+function cambiar() {
+  google.classList.remove("hidden");
+  change.classList.add("hidden");
+}
