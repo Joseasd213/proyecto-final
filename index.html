@@ -57,19 +57,23 @@
         </p>
         <div class="flex">
           <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10">
-          <img src="contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
-          <span class="mr-30px">Presencial</span>
+          <span class="mr-30px">Pantalla compartida</span>
           </button>       
           <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8">
-            <span>Online</span>
+            <span>Por telefono</span>
           </button>
         </div>
-        <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px] mt-5">
-          <input 
-          type="text" 
-          placeholder="Buscar..." 
-          class="w-full outline-none bg-transparent"
+        <div class="flex border border-gray-300 rounded-2xl px-10 py-5 w-[565px] mt-5">
+          <input
+            type="text"
+            list="opciones"
+            placeholder="Buscar..."
+            class="w-full outline-none bg-transparent"
           >
+          <datalist id="opciones">
+            <option value="Renovar DNI/NIE o TIE">
+            <option value="Alta al empadronamiento">
+          </datalist>
         </div>
       </div>
       <!-- Contenido del container video -->

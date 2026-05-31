@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (!nombre || !email || !mensaje) {
         alert("Completa nombre, email y mensaje");
+        
         return;
       }
 

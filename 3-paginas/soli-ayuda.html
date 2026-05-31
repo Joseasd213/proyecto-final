@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../Inicial/logo.png" type="image/png">
 </head>
 <body>
-<main>
+  <main>
     <!-- Contenido del primer container -->
     <header class="flex items-center gap-[200px] justify-center h-36 shadow">
-      <div class="gap-[50px] flex mr-[300px]">
+      <div class="gap-[50px] flex">
         <div class="flex">
           <div>
             <a href="../index.html">
-              <img class="logo" src="../Inicial/logo.png" alt="">
+              <img class="logo" src="../../Inicial/logo.png" alt="">
             </a>
           </div>
           <div class="logo-words">
@@ -30,23 +30,22 @@
           <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
           <!-- transition = activa animación, sin ser bruto -->
           <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
-          <a href="../index.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:bg-[#026344] hover:-translate-y-1"><h2>Inicio</h2></div></a>
-          <a href="como.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:bg-[#026344] hover:-translate-y-1"><h2>Como funciona</h2></div></a>
-          <a href="contacto.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:bg-[#026344] hover:-translate-y-1"><h2>Contactos</h2></div></a>
-          <p id="userName" class=" text-2xl font-semibold text-green-700 absolute left-[1000px]"></p>       
+          <a href="../index.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 bg-[#026344] text-[white] hover:-translate-y-1"><h2>Inicio</h2></div></a>
+          <a href="../3-paginas/como.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Como funciona</h2></div></a>
+          <a href="../3-paginas/contacto.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Contactos</h2></div></a>
+          <p id="userName" class=" text-2xl font-semibold text-green-700 left-[1000px]"></p>       
         </div>
       </div>
         <!-- Como funciona cada propiedad -->
       <div class="flex gap-20 text-center items-center">
-        <a href="iniciar-session.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:bg-[#026344] hover:-translate-y-1"><h2>Iniciar sesion</h2></div></a>
-        <a href="soli-ayuda.html">
-          <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center text-white rounded-2xl mr-8 hover:text-lime-400 transition cursor-pointer hover:-translate-y-1">
+        <a href="../3-paginas/iniciar-session.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Iniciar sesion</h2></div></a>
+        <a href="../3-paginas/soli-ayuda.html">
+          <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center rounded-2xl mr-8 transition cursor-pointer text-[white] hover:-translate-y-1">
             <h2>Solicitar ayuda</h2>
           </div> 
         </a>
       </div>
     </header>
-
     <!-- Contenido del segundo container -->
     <div class="flex justify-center mt-1">
       <div class="flex-1 w-[900px] h-[760px] absolute mr-[1000px] p-20 bg-gradient-to-r from-white/100 via-white/95 via-[90%] to-transparent pb-[140px]">        
@@ -57,32 +56,32 @@
           Acompañamos a personas con dificultades digitales, personas mayores e inmigrantes en la gestion de citas y tramites con la amonostracion publica
         </p>
         <div class="flex">
-            <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10">
-            <img src="contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
-            <span class="mr-30px">Presencial</span>
-            </button>       
-            <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8">
-              <span>Online</span>
-            </button>
-          </div>
-            <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px] mt-5">
-              <input 
-              type="text" 
-              placeholder="Buscar..." 
-              class="w-full outline-none bg-transparent"
-              >
-            </div>
+          <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10">
+          <img src="../contacto/person.png" alt="" class="w-10 h-10 object-contain  mb-1">
+          <span class="mr-30px">Presencial</span>
+          </button>       
+          <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8">
+            <span>Online</span>
+          </button>
         </div>
+        <div class="flex border border-gray-300 rounded-2xl px-7 py-5 w-[470px] mt-5">
+          <input 
+          type="text" 
+          placeholder="Buscar..." 
+          class="w-full outline-none bg-transparent"
+          >
+        </div>
+      </div>
       <!-- Contenido del container video -->
         <div class="w-[1100px] max-w-[1200px] ml-[600px]">
-          <img class="ml-[100px] w-full" src="Inicial/administracion.png" alt="">
+          <img class="ml-[100px] w-full" src="../Inicial/administracion.png" alt="">
         </div>
     </div>
     <!-- Contenido del tercer container -->
     <div class="flex justify-center gap-32 mt-5 items-center bg-[#f0f3f1] h-36 px-2 w-fit mx-auto rounded-2xl">      
       <div class="flex">
         <div>
-          <img class="logo" src="Inicial/assistance.png" alt="Citafacil">
+          <img class="logo" src="../Inicial/assistance.png" alt="Citafacil">
         </div>
         <div class="mt-5">
           <h2 class="text-[25px] mt-5 m-0 font-semibold">Aconpañamiento</h2>
@@ -91,7 +90,7 @@
       </div> 
       <div class="flex">
         <div>
-          <img class="w-36" src="Inicial/hands.png" alt="Citafacil">
+          <img class="w-36" src="../Inicial/hands.png" alt="Citafacil">
         </div>
         <div class="mt-2">
           <h2 class="text-[25px] mt-5 m-0 font-semibold">Seguro y legal</h2>
@@ -100,7 +99,7 @@
       </div>  
       <div class="flex">
         <div>
-          <img class="w-32" src="Inicial/shield.png" alt="Citafacil">
+          <img class="w-32" src="../Inicial/shield.png" alt="Citafacil">
         </div>
         <div>
           <h2 class="text-[25px] mt-5 m-0 font-semibold">Ahorra tiempo</h2>
@@ -109,7 +108,7 @@
       </div>
       <div class="flex mr-6">
         <div>
-          <img class="w-32" src="Inicial/clock.png" alt="Citafacil">
+          <img class="w-32" src="../Inicial/clock.png" alt="Citafacil">
         </div>
         <div class="mt-5">
           <h2 class="text-[25px] m-0 font-semibold">Aconpañamiento</h2>
@@ -119,83 +118,78 @@
     </div>
     <!-- Contenido del cuarto container -->
     <header class="flex justify-center bg-[#026344] shadow mt-10">
-        <div class="flex gap-[80px] text-white py-10">
-            <!-- Contacto 1 -->
-            <div class="flex flex-col gap-1">
-                <div class="flex items-center">
-                <div><img src="guia/logo.png" alt=""></div>
-                <div>
-                    <h2 class="text-[40px] font-semibold">CitaFacil</h2>
-                    <p class="text-[20px]">Tu cita, sin complicaciones</p>
-                </div>
-                </div>
-                <div>
-                <!-- Break-words permite que la palabra no salga de su width -->
-                <h1 class="w-[350px] h-[100px] ml-6 break-words text-[20px]">Te ayudamos a gestionar tus citas y tramites administrativas de forma facil, rapido y seguro</h1>
-                </div>
+      <div class="flex gap-[80px] text-white py-10">
+        <!-- Contacto 1 -->
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center">
+            <div><img src="../guia/logo.png" alt=""></div>
+            <div>
+              <h2 class="text-[40px] font-semibold">CitaFacil</h2>
+              <p class="text-[20px]">Tu cita, sin complicaciones</p>
             </div>
-            <!-- Divider -->
-            <div class="w-px bg-white"></div>
-            <!-- Contacto 2 -->
-            <div class="flex flex-col gap-4 mt-5">
-                <h2 class="text-[30px] font-semibold">Enlaces Rapidos</h2>
-                <div class="gap-2 flex flex-col">
-                <a href="../index.html"><div>Inicio</div></a>
-                <a href="como.html"><div>Como funciona</div></a>
-                <a href="contacto.html"><div>Contactos</div></a>
-                <a href="iniciar-session.html"><div>Iniciar sesion</div></a>
-                <a href=""><div><p>Solicitar Ayuda</p></div></a>
-                </div>
-            </div>
-            <!-- Divider -->
-            <div class="w-px bg-white"></div>
-            <!-- Contacto 3 -->
-            <div class="flex flex-col gap-4 mt-5">
-                <h2 class="text-[30px] font-semibold">Contacto</h2>
-                <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-2">
-                    <img class="w-[30px]" src="contacto/message.svg" alt="">
-                    <p>info@citafacil.com</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <img class="w-[30px]" src="guia/phone-volume-solid-full.svg" alt="">
-                    <p>+1 (555) 123-4567</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <img class="w-[30px]" src="guia/location-dot-solid-full.svg" alt="">
-                    <p>123 Main Street, City, State 12345</p>
-                </div>
-                </div>
-            </div>
-            <!-- Divider -->
-            <div class="w-px bg-white"></div>
-            <!-- Redes -->
-            <div class="flex flex-col gap-6 mt-5">
-            <h2 class="text-[30px] font-semibold">Síguenos</h2>
-                <div class="flex gap-12">
-                    <a target="_blank" href="https://www.facebook.com/?locale=es_ES">
-                        <div class="w-16 h-16 flex bg-white items-center rounded-full"><img class="object-cover" src="Inicial/facebook.png" alt=""></div>              
-                    </a>
-                    
-                    <a target="_blank" href="https://web.whatsapp.com/">
-                        <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover"  src="guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>      
-                    </a>
-                    
-                    <a target="_blank" href="https://www.instagram.com/">
-                        <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="" src="guia/message.png" alt="Instagram"></div>              
-                    </a>
-
-                    <a target="_blank" href="https://app.call.com/">
-                        <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover" src="Inicial/telephone.png" alt="LinkedIn"></div>            
-                    </a>
-                </div>
-            </div>
+          </div>
+          <div>
+            <!-- Break-words permite que la palabra no salga de su width -->
+            <h1 class="w-[350px] h-[100px] ml-6 break-words text-[20px]">Te ayudamos a gestionar tus citas y tramites administrativas de forma facil, rapido y seguro</h1>
+          </div>
         </div>
+        <!-- Divider -->
+        <div class="w-px bg-white"></div>
+        <!-- Contacto 2 -->
+        <div class="flex flex-col gap-4 mt-5">
+          <h2 class="text-[30px] font-semibold">Enlaces Rapidos</h2>
+          <div class="gap-2 flex flex-col">
+            <a href="../index.html"><div>Inicio</div></a>
+            <a href="../3-paginas/como.html"><div>Como funciona</div></a>
+            <a href="../3-paginas/contacto.html"><div>Contactos</div></a>
+            <a href="../3-paginas/iniciar-session.html"><div>Iniciar sesion</div></a>
+            <a href="../3-paginas/soli-ayuda.html"><div><p>Solicitar Ayuda</p></div></a>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="w-px bg-white"></div>
+        <!-- Contacto 3 -->
+        <div class="flex flex-col gap-4 mt-5">
+          <h2 class="text-[30px] font-semibold">Contacto</h2>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-2">
+              <img class="w-[30px]" src="../contacto/message.svg" alt="">
+              <p>info@citafacil.com</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img class="w-[30px]" src="../guia/phone-volume-solid-full.svg" alt="">
+              <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img class="w-[30px]" src="../guia/location-dot-solid-full.svg" alt="">
+              <p>123 Main Street, City, State 12345</p>
+            </div>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="w-px bg-white"></div>
+        <!-- Redes -->
+        <div class="flex flex-col gap-6 mt-5">
+          <h2 class="text-[30px] font-semibold">Síguenos</h2>
+          <div class="flex gap-12">
+            <a target="_blank" href="https://www.facebook.com/?locale=es_ES">
+              <div class="w-16 h-16 flex bg-white items-center rounded-full"><img class="object-cover" src="../Inicial/facebook.png" alt=""></div>              
+            </a>
+            <a target="_blank" href="https://web.whatsapp.com/">
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>      
+            </a>
+            <a target="_blank" href="https://www.instagram.com/">
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="" src="../guia/message.png" alt="Instagram"></div>              
+            </a>
+            <a target="_blank" href="https://app.call.com/">
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover" src="../../Inicial/telephone.png" alt="LinkedIn"></div>            
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
-</main>
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-
-<script src="3-paginas/supabase.js">
-</script>
+  </main>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="../3-paginas/supabase.js"></script>
 </body>
 </html>
