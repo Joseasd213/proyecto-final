@@ -66,6 +66,7 @@
           <input
             type="text"
             list="opciones"
+            id="buscador"
             placeholder="Buscar..."
             class="w-full outline-none bg-transparent"
           >
@@ -193,9 +194,15 @@
       </div>
     </header>
   </main>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="3-paginas/supabase.js">
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="3-paginas/supabase.js"></script>
 
-  </script>
+<script>
+document.querySelector("#buscador").onchange = function() {
+  if (this.value === "Renovar DNI/NIE o TIE") {
+    window.location.href = "Paginas-informativas/renovar-dni.html";
+  }
+};
+</script>
 </body>
 </html>
