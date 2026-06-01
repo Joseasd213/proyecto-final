@@ -30,17 +30,18 @@
           <!-- hover:text/border-lime-400  = al pasar el mouse por encima se hara lime-400, border y text -->
           <!-- transition = activa animación, sin ser bruto -->
           <!-- cursor-pointer = cambia el cursor al pasar el mouse por encima -->
-          <a href="index.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 bg-[#026344] text-[white] hover:-translate-y-1"><h2>Inicio</h2></div></a>
-          <a href="3-paginas/como.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Como funciona</h2></div></a>
-          <a href="3-paginas/contacto.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Contactos</h2></div></a>
+          <!-- hover:translate-y-[-4px] mueve el elemento arriba al pasar el cursor -->
+          <a href="index.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 bg-[#026344] text-[white] hover:translate-y-[-4px]"><h2>Inicio</h2></div></a>
+          <a href="3-paginas/como.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:translate-y-[-4px]"><h2>Como funciona</h2></div></a>
+          <a href="3-paginas/contacto.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:translate-y-[-4px]"><h2>Contactos</h2></div></a>
           <p id="userName" class=" text-2xl font-semibold text-green-700 left-[1000px]"></p>       
         </div>
       </div>
         <!-- Como funciona cada propiedad -->
       <div class="flex gap-20 text-center items-center">
-        <a href="3-paginas/iniciar-session.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:-translate-y-1"><h2>Iniciar sesion</h2></div></a>
+        <a href="3-paginas/iniciar-session.html"><div class="text-[20px] px-3 py-1 rounded-lg transition-all duration-300 hover:text-[white] hover:bg-[#026344] hover:translate-y-[-4px]"><h2>Iniciar sesion</h2></div></a>
         <a href="3-paginas/soli-ayuda.html">
-          <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center rounded-2xl mr-8 transition cursor-pointer text-[white] hover:-translate-y-1">
+          <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center rounded-2xl mr-8 transition cursor-pointer text-[white] hover:translate-y-[-4px]">
             <h2>Solicitar ayuda</h2>
           </div> 
         </a>
@@ -56,10 +57,10 @@
           Acompañamos a personas con dificultades digitales, personas mayores e inmigrantes en la gestion de citas y tramites con la amonostracion publica
         </p>
         <div class="flex">
-          <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10">
+          <button class="flex items-center justify-center text-[20px] mt-10 bg-[#026344] h-16 pl-[48px] pr-[64px] text-white rounded-2xl mr-10 hover:translate-y-[-4px] transition">
           <span class="mr-30px">Pantalla compartida</span>
           </button>       
-          <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8">
+          <button class="text-[20px] mt-10 bg-white h-16 px-16 items-center border border-[#026344] text-[#026344] rounded-2xl mr-8 hover:translate-y-[-4px] transition">
             <span>Por telefono</span>
           </button>
         </div>
@@ -141,13 +142,14 @@
         <div class="w-px bg-white"></div>
         <!-- Contacto 2 -->
         <div class="flex flex-col gap-4 mt-5">
-          <h2 class="text-[30px] font-semibold">Enlaces Rapidos</h2>
+          <h2 class="text-[30px] font-semibold hover:translate-y-[-4px] transition">Enlaces Rapidos</h2>
+          <!-- hover:translate-y-[-4px] mueve enlaces rápidos al pasar el cursor -->
           <div class="gap-2 flex flex-col">
-            <a href="index.html"><div>Inicio</div></a>
-            <a href="3-paginas/como.html"><div>Como funciona</div></a>
-            <a href="3-paginas/contacto.html"><div>Contactos</div></a>
-            <a href="3-paginas/iniciar-session.html"><div>Iniciar sesion</div></a>
-            <a href="/3-paginas/soli-ayuda.html"><div><p>Solicitar Ayuda</p></div></a>
+            <a href="index.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Inicio</div></a>
+            <a href="3-paginas/como.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Como funciona</div></a>
+            <a href="3-paginas/contacto.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Contactos</div></a>
+            <a href="3-paginas/iniciar-session.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Iniciar sesion</div></a>
+            <a href="/3-paginas/soli-ayuda.html"><div class="transition-all duration-300 hover:translate-y-[-4px]"><p>Solicitar Ayuda</p></div></a>
           </div>
         </div>
         <!-- Divider -->
@@ -174,19 +176,19 @@
         <div class="w-px bg-white"></div>
         <!-- Redes -->
         <div class="flex flex-col gap-6 mt-5">
-          <h2 class="text-[30px] font-semibold">Síguenos</h2>
+          <h2 class="text-[30px] font-semibold hover:translate-y-[-4px] transition">Síguenos</h2>
           <div class="flex gap-12">
             <a target="_blank" href="https://www.facebook.com/?locale=es_ES">
-              <div class="w-16 h-16 flex bg-white items-center rounded-full"><img class="object-cover" src="Inicial/facebook.png" alt=""></div>              
+              <div class="w-16 h-16 flex bg-white items-center rounded-full hover:translate-y-[-4px] transition"><img class="object-cover" src="Inicial/facebook.png" alt=""></div>              
             </a>
             <a target="_blank" href="https://web.whatsapp.com/">
-              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover"  src="guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>      
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="object-cover"  src="guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>      
             </a>
             <a target="_blank" href="https://www.instagram.com/">
-              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="" src="guia/message.png" alt="Instagram"></div>              
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="object-cover" src="guia/message.png" alt="Instagram"></div>              
             </a>
             <a target="_blank" href="https://app.call.com/">
-              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover" src="Inicial/telephone.png" alt="LinkedIn"></div>            
+              <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="object-cover" src="Inicial/telephone.png" alt="LinkedIn"></div>            
             </a>
           </div>
         </div>
