@@ -128,31 +128,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (googleBtn) {
     googleBtn.addEventListener("click", async () => {
-      const { error } = await supabaseClient.auth.signInWithOAuth({
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: "http://localhost:5500"
+          redirectTo: `${window.location.origin}/3-paginas/iniciar-session.html`
         }
       });
 
       if (error) {
         setMessage("Error Google: " + error.message);
+        return;
       }
+
+      setMessage("Redirigiendo a Google...");
+      if (data?.url) window.location.href = data.url;
     });
   }
 
   if (facebookBtn) {
     facebookBtn.addEventListener("click", async () => {
-      const { error } = await supabaseClient.auth.signInWithOAuth({
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: "facebook",
         options: {
-          redirectTo: "http://127.0.0.1:5502/3-paginas/iniciar-session.html"
+          redirectTo: `${window.location.origin}/3-paginas/iniciar-session.html`
         }
       });
 
       if (error) {
         setMessage("Error Facebook: " + error.message);
+        return;
       }
+
+      setMessage("Redirigiendo a Facebook...");
+      if (data?.url) window.location.href = data.url;
     });
   }
 
