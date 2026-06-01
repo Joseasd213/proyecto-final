@@ -61,7 +61,7 @@
             <h2>Iniciar sesión</h2>
           </div>
         </a>
-        <a href="../3-paginas/soli-ayuda.html">
+        <a href="../3-paginas/contacto.html">
           <div class="flex text-[20px] bg-[#026344] h-16 px-10 items-center rounded-2xl mr-8 transition cursor-pointer text-[white] hover:translate-y-[-4px]">
             <h2>Solicitar ayuda</h2>
           </div>
@@ -333,62 +333,86 @@
     <!-- FOOTER COMO EL INDEX, PERO AJUSTADO A RUTAS DE ESTA CARPETA -->
     <header class="flex justify-center bg-[#026344] shadow mt-10">
       <div class="flex gap-[80px] text-white py-10">
+
+        <!-- Contacto 1 -->
         <div class="flex flex-col gap-1">
           <div class="flex items-center">
-            <div><img src="../guia/logo.png" alt="Logo"></div>
+            <div><img src="../guia/logo.png" alt=""></div>
             <div>
-              <h2 class="text-[40px] font-semibold">CitaFácil</h2>
+              <h2 class="text-[40px] font-semibold hover:translate-y-[-4px] transition">CitaFácil</h2>
               <p class="text-[20px]">Tu cita, sin complicaciones</p>
             </div>
           </div>
           <div>
-            <h1 class="w-[350px] h-[100px] ml-6 break-words text-[20px]">
-              Te ayudamos a gestionar tus citas y trámites administrativos de forma fácil, rápida y segura.
-            </h1>
+            <!-- Hover en texto descriptivo para mantener interactividad suave -->
+            <h1 class="w-[350px] h-[100px] ml-6 break-words text-[20px] hover:translate-y-[-4px] transition">Te ayudamos a gestionar tus citas y trámites administrativos de forma fácil, rápida y segura</h1>
           </div>
         </div>
 
+        <!-- Divider -->
         <div class="w-px bg-white"></div>
 
+        <!-- Contacto 2 -->
         <div class="flex flex-col gap-4 mt-5">
           <h2 class="text-[30px] font-semibold hover:translate-y-[-4px] transition">Enlaces Rápidos</h2>
+          <!-- hover:translate-y-[-4px] mueve enlaces rápidos al pasar el cursor -->
           <div class="gap-2 flex flex-col">
             <a href="../index.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Inicio</div></a>
-            <a href="../3-paginas/como.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Cómo funciona</div></a>
-            <a href="../3-paginas/contacto.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Contacto</div></a>
-            <a href="../3-paginas/iniciar-session.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Iniciar sesión</div></a>
-            <a href="../3-paginas/soli-ayuda.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Solicitar ayuda</div></a>
+            <a href="como.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Cómo funciona</div></a>
+            <a href="contacto.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Contacto</div></a>
+            <a href="iniciar-session.html"><div class="transition-all duration-300 hover:translate-y-[-4px]">Iniciar sesión</div></a>
+            <a href="contacto.html"><div class="transition-all duration-300 hover:translate-y-[-4px]"><p>Solicitar Ayuda</p></div></a>
           </div>
         </div>
 
+        <!-- Divider -->
         <div class="w-px bg-white"></div>
 
+        <!-- Contacto 3 -->
         <div class="flex flex-col gap-4 mt-5">
-          <h2 class="text-[30px] font-semibold">Contacto</h2>
+          <h2 class="text-[30px] font-semibold hover:translate-y-[-4px] transition">Contacto</h2>
+
           <div class="flex flex-col gap-4">
             <div class="flex items-center gap-2">
               <img class="w-[30px]" src="../contacto/message.svg" alt="">
               <p>info@citafacil.com</p>
             </div>
+
             <div class="flex items-center gap-2">
               <img class="w-[30px]" src="../guia/phone-volume-solid-full.svg" alt="">
-              <p>+34 934 123 456</p>
+              <p>+1 (555) 123-4567</p>
             </div>
+
             <div class="flex items-center gap-2">
               <img class="w-[30px]" src="../guia/location-dot-solid-full.svg" alt="">
-              <p>Avinguda dels Vents 9-13</p>
+              <p>123 Main Street, City, State 12345</p>
             </div>
           </div>
         </div>
 
+        <!-- Divider -->
         <div class="w-px bg-white"></div>
 
+        <!-- Redes -->
         <div class="flex flex-col gap-6 mt-5">
-          <h2 class="text-[30px] font-semibold">Síguenos</h2>
-          <div class="flex gap-8">
-            <div class="w-16 h-16 flex bg-white items-center rounded-full"><img class="object-cover" src="../Inicial/facebook.png" alt=""></div>
-            <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover w-10" src="../guia/whatsapp-brands-solid-full.svg" alt=""></div>
-            <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full"><img class="object-cover w-10" src="../guia/message.png" alt=""></div>
+          <h2 class="text-[30px] font-semibold hover:translate-y-[-4px] transition">Síguenos</h2>
+
+          <div class="flex gap-12">
+                <a target="_blank" href="https://www.facebook.com/?locale=es_ES">
+                  <div class="w-16 h-16 flex bg-white items-center rounded-full hover:translate-y-[-4px] transition"><img class="object-cover" src="../Inicial/facebook.png" alt=""></div>              
+                </a>
+                
+                <a target="_blank" href="https://web.whatsapp.com/">
+                  <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="object-cover"  src="../guia/whatsapp-brands-solid-full.svg" alt="Twitter"></div>      
+                </a>
+                
+                <a target="_blank" href="https://www.instagram.com/">
+                  <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="" src="../guia/message.png" alt="Instagram"></div>              
+                </a>
+
+                <a target="_blank" href="https://app.call.com/">
+                  <div class="w-16 h-16 flex justify-center items-center bg-white rounded-full hover:translate-y-[-4px] transition"><img class="object-cover" src="../Inicial/telephone.png" alt="LinkedIn"></div>            
+                </a>
           </div>
         </div>
       </div>
